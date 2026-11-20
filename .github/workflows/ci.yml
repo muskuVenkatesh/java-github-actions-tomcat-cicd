@@ -40,7 +40,7 @@ jobs:
       - name: Build with SonarQube
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST}}
+          SONAR_HOST: ${{ secrets.SONAR_HOST}}
         run: |
           mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -Dsonar.host.url="${SONAR_HOST}" \
