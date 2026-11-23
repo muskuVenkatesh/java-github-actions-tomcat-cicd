@@ -48,8 +48,8 @@ jobs:
             -Dsonar.token="$SONAR_TOKEN" \
             -Dsonar.qualitygate.wait=true
 
-      # 5. Configure Nexus credentials
-      - name: Configure Maven settings
+      
+      - name: Publish artifact to Nexus
         env:
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
@@ -73,6 +73,5 @@ jobs:
           </settings>
           EOF
 
-      # 6. Publish the versioned artifact to Nexus
-      - name: Publish artifact to Nexus
-        run: mvn -B deploy -DskipTests
+          mvn -B deploy -DskipTests
+
