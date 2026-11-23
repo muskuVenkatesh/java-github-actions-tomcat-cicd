@@ -21,6 +21,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.10.2</junit.version>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://16.4.140.254:8082/repository/maven-releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://16.4.140.254:8082/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <!-- Dependencies -->
     <dependencies>
